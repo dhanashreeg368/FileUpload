@@ -5,6 +5,7 @@ from pymongo import MongoClient
 from django.shortcuts import render
 import uuid
 from django.http import JsonResponse
+from gridfs import GridFS
 
 # Connect to MongoDB
 client = MongoClient('mongodb://localhost:27017/')
@@ -45,3 +46,20 @@ def generate_short_link(request, file_id):
     
     # return a JSON response with the download URL
     return JsonResponse({'download_url': download_url})
+
+# # global var to store id of signedin user
+# user = None 
+
+# def download_file(request, file_id):
+#     global user
+#     # Connect to MongoDB and retrieve the GridFS object
+#     fs = GridFS(db)
+
+#     # Retrieve the file from GridFS using the given file ID
+#     file = fs.get(file_id)
+
+#     # Set the response headers to indicate that this is a file download
+#     response = HttpResponse(file.read())
+#     response['Content-Type'] = file.content_type
+#     response['Content-Disposition'] = f'attachment; filename="{file.filename}"'
+#     return response

@@ -21,12 +21,15 @@
     </style>
   </head>
   <body>
+    <!-- <a href="{% url 'download_file' file._id %}">Download file</a>   
+     {% with file_id=file._id %}
+    <a href="{% url 'download_file' file_id=file_id %}">Download file</a>
+    {% endwith %} --> 
     <form id="upload-form" enctype="multipart/form-data">
       {% csrf_token %}
       <input type="file" name="file">
       <button type="submit">Upload</button>
-    </form>
-
+    </form>   
     <div id="response"></div>
 
     <script>
