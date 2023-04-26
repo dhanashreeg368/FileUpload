@@ -6,13 +6,13 @@
 
 *Features:*   
 
-1. Front-end:
+1. Front-end:         
 ○ User interface that allows users to select and upload a file.        
 ○ Display a short link after the file is successfully uploaded.   
 ○ Error handling for invalid file types or file size restrictions.    
 ○ Download link for the uploaded file.     
 
-2. Back-end:
+2. Back-end:         
 ○ Server-side API that handles file upload and short link generation.   
 ○ Store the uploaded file on the server or on a cloud storage service (e.g., AWS
 S3).       

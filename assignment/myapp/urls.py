@@ -7,5 +7,6 @@ from . import views
 
 urlpatterns = [
     path('',views.home_page),
-    path('upload', upload_file, name='upload')
+    path('upload', views.upload_file),
+    path('<slug:short_link>', views.generate_short_link)
 ]
